@@ -41,8 +41,8 @@ clean-all: clean
 
 ### Standalone ISO
 
-manganese.iso: tinycore.iso manganese
-	sudo bash build-iso.sh
-
 tinycore.iso:
 	curl -o tinycore.iso "http://www.tinycorelinux.net/14.x/x86_64/release/CorePure64-current.iso"
+
+manganese.iso: tinycore.iso manganese
+	sudo bash build-iso.sh
