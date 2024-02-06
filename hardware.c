@@ -48,7 +48,12 @@ uint64_t hardware_instruction_set() {
 uint64_t hardware_ram_speed() {
   glob_t dmiglob;
   uint16_t ram_speed;
-  assert(!glob("/sys/firmware/dmi/entries/17-*/raw", 0, NULL, &dmiglob));
+  switch (glob("/sys/firmware/dmi/entries/17-*/raw", 0, NULL, &dmiglob)) {
+    case GLOB_NOSPACE:
+    case GLOB_ABORTED:
+    case GLOB_NOMATCH:
+      return (uint64_t) 0u;
+  }
   for(size_t i = 0; i < dmiglob.gl_pathc; i++) {
     FILE* file = fopen(dmiglob.gl_pathv[i], "r");
     if(file == NULL) {

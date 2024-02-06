@@ -5,7 +5,7 @@
 #include "sys/sysinfo.h"
 
 #include "immintrin.h"
-#include "cblas.h"
+#include "OpenBLAS/cblas.h"
 
 #include "SIMDxorshift/include/simdxorshift128plus.h"
 
