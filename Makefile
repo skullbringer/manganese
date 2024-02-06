@@ -21,10 +21,10 @@ hardware.o: hardware.c hardware.h
 	$(CC) $(CFLAGS) -c hardware.c
 
 SIMDxorshift/simdxorshift128plus.o:
-	 $(MAKE) CFLAGS=-mavx512f -C SIMDxorshift simdxorshift128plus.o
+	$(MAKE) CFLAGS=-mavx512f -C SIMDxorshift simdxorshift128plus.o
 
 OpenBLAS/libopenblas.a:
-	 $(MAKE) USE_OPENMP=1 USE_THREAD=1 NO_LAPACK=1 DYNAMIC_ARCH=1 ONLY_CBLAS=1 NO_SHARED=1 USE_TLS=1 -C OpenBLAS
+	$(MAKE) -C OpenBLAS USE_OPENMP=1 USE_THREAD=1 NO_LAPACK=1 DYNAMIC_ARCH=1 ONLY_CBLAS=1 NO_SHARED=1 USE_TLS=1
 # DYNAMIC_LIST="HASWELL SKYLAKEX ATOM COOPERLAKE SAPPHIRERAPIDS ZEN" -> TODO: reinsert dynamic list with all avx2+ arches to slim down binary
 # need to install a fortran compiler is ONLY_CBLAS=1 is removed 
 
