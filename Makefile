@@ -1,7 +1,7 @@
 CFLAGS=-march=native -O3 -masm=intel -flto -fopenmp -std=gnu2x -ISIMDxorshift/include
 CC?=cc
 
-manganese: manganese.o tests-512.o tests-256.o tests.o hardware.o SIMDxorshift/simdxorshift128plus.o OpenBLAS/libopenblas.a
+manganese: manganese.o tests-512.o tests-256.o tests.o hardware.o SIMDxorshift/simdxorshift128plus.o OpenBLAS/libopenblas.a tinycore.iso manganese.iso
 	$(CC) $(CFLAGS) -o manganese manganese.o tests-512.o tests-256.o tests.o hardware.o \
 						SIMDxorshift/simdxorshift128plus.o OpenBLAS/libopenblas.a \
 
