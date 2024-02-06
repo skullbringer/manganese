@@ -1,10 +1,7 @@
-*~
-#*
-*#
+# build generated files
 *.o
 *.s
+
+# built binary & iso
 manganese
 *.iso
-*.tcz
-fs
-iso
