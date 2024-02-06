@@ -45,4 +45,4 @@ manganese.iso: tinycore.iso manganese
 	sudo bash build-iso.sh
 
 tinycore.iso:
-	curl -o tinycore.iso "http://tinycorelinux.net/13.x/x86_64/release/CorePure64-13.0.iso"
+	curl -o tinycore.iso "http://www.tinycorelinux.net/14.x/x86_64/release/CorePure64-current.iso"
